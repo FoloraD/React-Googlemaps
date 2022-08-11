@@ -9,37 +9,53 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
+import Map from './component/map';
+
+import {useJsApiLoader} from '@react-google-maps/api'
 
 
 function App() {
+
+  
   return (
+    //flex is a box & renders 'div' element 
     <Flex
       position='relative'
       flexDirection='column'
-      alignItems='centre'
+      alignItems='center'
       h='100vh'
-      w='100vh'
+      w='100vw'
+      bg={'red'}
+
       >
+      <Map/>
+   {/*  <Box postion='absolute' left={0} top={0} h='100%' w='100%'>
+      {/*googlemap box container */}
+      
 
-    <Box postion='absolute' left={0} top={0} h='100%'></Box>
+  {/*   </Box> */}
 
+{/*User Input Options box container */}
     <Box 
       p={4}
       borderRadius='lg'
-      mt={4}
+      m={4}
       bgColor='white'
       shadow='base'
       minW='container.md'
-      zIndex='modal'
+      zIndex='1'
+      bg={'blue'}
       >
-    
+    {/*Hstack : stack elements in horizontal way */}
     <HStack spacing={4}>
       <Input type='text' placeholder='Origin' />
       <Input type='text' placeholder='Destination' />
       <ButtonGroup>
+        {/*calculate route pink button */}
         <Button colorScheme='pink' type='submit'> 
         Calculate Route 
         </Button>
+        {/*cancel button (x) */}
         <IconButton
           aria-label='center back'
           icon={<FaTimes />}
@@ -50,11 +66,13 @@ function App() {
     <HStack spacing={4} mt={4} justifyContent='space-between'>
       <Text> Distance: </Text>
       <Text> Duration </Text>
+
+      {/*arrow pointer button */}
       <IconButton 
         aria-label='center back'
         icon={<FaLocationArrow />}
         isRound
-        onClick={ () => alert(123)}
+        onClick={() => alert(123)}
         />
  
     </HStack>
