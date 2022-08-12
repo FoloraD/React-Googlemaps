@@ -18,14 +18,14 @@ function App() {
 
   
   return (
-    //flex is a box & renders 'div' element 
+    //flex: a box with display:flex & renders 'div' element 
     <Flex
       position='relative'
       flexDirection='column'
       alignItems='center'
       h='100vh'
       w='100vw'
-      bg={'red'}
+      bg={'white'}
 
       >
       <Map/>
@@ -44,7 +44,7 @@ function App() {
       shadow='base'
       minW='container.md'
       zIndex='1'
-      bg={'blue'}
+      bg={'white'}
       >
     {/*Hstack : stack elements in horizontal way */}
     <HStack spacing={4}>
